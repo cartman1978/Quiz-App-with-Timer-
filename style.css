@@ -34,6 +34,7 @@ background: #12D8FA;
 }
 
 .info_box {
+    display: none;
     width: 540px;
     background: #fff;
     border-radius: 5px;
@@ -74,10 +75,29 @@ background: #12D8FA;
     height: 40px;
     width: 100px;
     border: 1px solid #12D8FA;
-    background: #12D8FA;
     border-radius: 5px;
     color: #fff;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons button.quit {
+    color: #12D8FA;
+   
+}
+
+.buttons button.restart {
+    color: #fff;
+    background: #12D8FA;
+}
+
+.buttons button.restart:hover {
+    background: #1FA2FF;
+}
+
+.buttons button.quit:hover {
+    color: #fff;
+    background: #1FA2FF;
 }
