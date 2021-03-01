@@ -20,6 +20,7 @@ exit_btn.onclick = () => {
 continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //Show Quiz
+    showQuestions();
 }
 
 let que_count = 0;
