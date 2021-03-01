@@ -9,3 +9,8 @@ const continue_btn = document.querySelector(".buttons .restart");
 start_btn.onclick = () => {
     info_box.classList.add("activeInfo");
 }
+
+//If Exit button is clicked
+exit_btn.onclick = () => {
+    info_box.classList.remove("activeInfo");
+}
