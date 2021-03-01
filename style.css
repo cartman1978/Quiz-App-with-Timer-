@@ -104,6 +104,7 @@ background: #12D8FA;
 }
 
 .quiz_box {
+    display: none;
     width: 550px;
     background: #fff;
     border-radius: 5px;
@@ -256,4 +257,8 @@ footer .next_btn {
     border-radius: 5px;
     border: 1px solid #84c5fe;
     cursor: pointer;
+}
+
+footer .next_btn:hover {
+    background: #12D8FA;
 }
