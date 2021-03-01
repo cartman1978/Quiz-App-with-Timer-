@@ -110,6 +110,8 @@ background: #12D8FA;
 }
 
 .quiz_box header {
+    position: relative;
+    z-index: 99;
     height: 70px;
     padding: 0 30px;
     background: #fff;
@@ -154,4 +156,20 @@ background: #12D8FA;
     line-height: 30px;
     border-radius: 5px;
     border: 1px solid #343a40;
+    user-select: none;
+}
+
+.quiz_box section {
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+.quiz_box section .que_text {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quiz_box section .option_list {
+    padding: 20px 0;
+    display: block;
 }
