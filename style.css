@@ -68,3 +68,16 @@ background: #12D8FA;
     padding: 0 35px;
     border-top: 1px solid lightgrey;
 }
+
+.info_box .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #12D8FA;
+    background: #12D8FA;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
