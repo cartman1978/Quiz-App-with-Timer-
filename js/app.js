@@ -24,6 +24,19 @@ continue_btn.onclick = () => {
 }
 
 let que_count = 0;
+const next_btn = quiz_box.querySelector('.next_btn');
+
+//If Next button clicked
+next_btn.onclick = () => {
+  if (que_count < questions.length -1) {
+       que_count++;
+       showQuestions(que_count);
+  } else {
+      console.log('Question completed');
+      
+  }
+ 
+}
 
 //getting questions and options from array
   function showQuestions(index) {
