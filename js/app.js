@@ -22,3 +22,11 @@ continue_btn.onclick = () => {
     quiz_box.classList.add("activeQuiz"); //Show Quiz
 }
 
+let que_count = 0;
+
+//getting questions and options from array
+  function showQuestions() {
+      const que_text = document.querySelector(".que_text");
+      let que_tag = '<span>' + questions[0].question + '</span>';
+      que_text.innerHTML = que_tag;
+  }
