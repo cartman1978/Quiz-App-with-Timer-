@@ -32,6 +32,7 @@ continue_btn.onclick = () => {
 let que_count = 0;
 let que_numb = 1;
 let counter;
+let counterLine;
 let timeValue = 15;
 let widthValue = 0;
 let userScore = 0;
@@ -40,6 +41,23 @@ const next_btn = quiz_box.querySelector('.next_btn');
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
+
+restart_quiz.onclick = () => {
+    quiz_box.classList.add("activeQuiz");
+    result_box.classList.remove("activeResult");
+    let que_count = 0;
+    let que_numb = 1;
+    let timeValue = 15;
+    let widthValue = 0;
+    let userScore = 0;
+    showQuestions(que_count);
+    queCounter(que_numb);
+    clearInterval(counter);
+    startTimer(timeValue);
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    next_btn.style.display = "none";
+}
 
 quit_quiz.onclick = () => {
     window.location.reload();
@@ -153,6 +171,22 @@ next_btn.onclick = () => {
         if (time < 0) {
             clearInterval(counter);
             timeCount.textContent = "00";
+
+             let correctAns = questions[que_count].answer;
+             let allOptions = option_list.children.length;
+
+            for (let i = 0; i < allOptions; i++) {
+                if (option_list.children[i].textContent == correctAns) {
+                    option_list.children[i].setAttribute("class", "option correct");
+                   option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                 }
+          
+            }
+             for (let i = 0; i < allOptions; i++) {
+                 option_list.children[i].classList.add("disabled");   
+            }
+             next_btn.style.display = "block";
+
         }
       }
   }
