@@ -62,15 +62,20 @@ next_btn.onclick = () => {
       }
   }
 
+  let tickIcon = ' <div class="icon tick"><i class="fas fa-check"></i></div>';
+  let crossIcon = ' <div class="icon cross"><i class="fas fa-times"></i></div>';
+
   function optionSelected(answer) {
       let userAns = answer.textContent;
       let correctAns = questions[que_count].answer;
       let allOptions = option_list.children.length;
      if (userAns == correctAns) {
          answer.classList.add("correct");
+         answer.insertAdjacentHTML("beforeend", tickIcon);
           console.log('Your answer is correct');
      } else {
          answer.classList.add("incorrect");
+          answer.insertAdjacentHTML("beforeend", crossIcon);
          console.log('Yout piuton');
 
          //If answer is incorrect then automatically select correct answer
