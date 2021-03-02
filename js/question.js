@@ -26,7 +26,7 @@ let questions = [
     {
      numb: 3,
      question : "What does PHP stand for?",
-     answer : "Hypertext Programming",
+     answer : "Hypertext Processor",
      options: [
          "Hypertext Processor",
          "Hypertext Programming",
@@ -37,7 +37,7 @@ let questions = [
     {
      numb: 4,
      question : "What does SQL stand for?",
-     answer : "Hyper Text Markup Language",
+     answer : "Structured Query Language",
      options: [
          "Stylish Question Language",
          "Stylesheet Query Language",
@@ -48,7 +48,7 @@ let questions = [
     {
      numb: 5,
      question : "What does XML stand for?",
-     answer : "Hyper Text Markup Language",
+     answer : "eXtensible Markup Language",
      options: [
          "eXtensible Markup Language",
          "eXtensible Multiple Language",
