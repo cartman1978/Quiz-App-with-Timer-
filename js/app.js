@@ -24,12 +24,13 @@ continue_btn.onclick = () => {
     quiz_box.classList.add("activeQuiz"); //Show Quiz
     showQuestions(0);
     queCounter(1);
-    startTimer(10);
+    startTimer(15);
 }
 
 let que_count = 0;
 let que_numb = 1;
 let counter;
+let timeValue = 15;
 
 const next_btn = quiz_box.querySelector('.next_btn');
 
@@ -40,6 +41,8 @@ next_btn.onclick = () => {
        que_numb++;
        showQuestions(que_count);
         queCounter(que_numb);
+        clearInterval(counter);
+        startTimer(timeValue);
   } else {
       console.log('Question completed');
       
