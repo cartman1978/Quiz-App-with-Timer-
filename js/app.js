@@ -7,6 +7,7 @@ const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const option_list = document.querySelector(".option_list");
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
+const timeLine = quiz_box.querySelector(" header .time_line");
 
 // If start button is clicked
 start_btn.onclick = () => {
@@ -25,12 +26,14 @@ continue_btn.onclick = () => {
     showQuestions(0);
     queCounter(1);
     startTimer(15);
+    startTimerLine(0);
 }
 
 let que_count = 0;
 let que_numb = 1;
 let counter;
 let timeValue = 15;
+let widthValue = 0;
 
 const next_btn = quiz_box.querySelector('.next_btn');
 
@@ -40,9 +43,12 @@ next_btn.onclick = () => {
        que_count++;
        que_numb++;
        showQuestions(que_count);
-        queCounter(que_numb);
-        clearInterval(counter);
-        startTimer(timeValue);
+       queCounter(que_numb);
+       clearInterval(counter);
+       startTimer(timeValue);
+       clearInterval(counterLine);
+       startTimerLine(widthValue);
+       
   } else {
       console.log('Question completed');
       
@@ -73,6 +79,7 @@ next_btn.onclick = () => {
 
   function optionSelected(answer) {
       clearInterval(counter);
+      clearInterval(counterLine);
       let userAns = answer.textContent;
       let correctAns = questions[que_count].answer;
       let allOptions = option_list.children.length;
@@ -117,6 +124,18 @@ next_btn.onclick = () => {
         }
       }
   }
+
+    function startTimerLine(time) {
+      counterLine = setInterval(timer, 29);
+      function timer() {
+        time += 1;
+        timeLine.style.width = time + "px";
+        if (time > 549) {
+            clearInterval(counterLine);
+        }
+      }
+  }
+
 
   
  function queCounter(index) {
