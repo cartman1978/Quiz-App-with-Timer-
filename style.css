@@ -182,6 +182,7 @@ background: #12D8FA;
     position: absolute;
     bottom: 0px;
     left: 0px;
+    height: 3px;
     width: 50%;
     background: red;
 }
