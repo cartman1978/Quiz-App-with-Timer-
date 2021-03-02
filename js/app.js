@@ -21,16 +21,21 @@ continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //Show Quiz
     showQuestions(0);
+    queCounter(1);
 }
 
 let que_count = 0;
+let que_numb = 1;
+
 const next_btn = quiz_box.querySelector('.next_btn');
 
 //If Next button clicked
 next_btn.onclick = () => {
   if (que_count < questions.length -1) {
        que_count++;
+       que_numb++;
        showQuestions(que_count);
+        queCounter(que_numb);
   } else {
       console.log('Question completed');
       
@@ -50,3 +55,9 @@ next_btn.onclick = () => {
       que_text.innerHTML = que_tag;
       option_list.innerHTML = option_tag;
   }
+
+ function queCounter(index) {
+      const bottom_ques_counter = quiz_box.querySelector(".total_que");
+      let totalQuesCountTag = '<span><p>'+ index +'</p>of<p>'+ questions.length +'</p>Questions</span>';
+      bottom_ques_counter.innerHTML = totalQuesCountTag;
+ }
