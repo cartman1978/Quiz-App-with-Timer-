@@ -72,6 +72,14 @@ next_btn.onclick = () => {
      } else {
          answer.classList.add("incorrect");
          console.log('Yout piuton');
+
+         //If answer is incorrect then automatically select correct answer
+         for (let i = 0; i < allOptions; i++) {
+          if (option_list.children[i].textContent == correctAns) {
+               option_list.children[i].setAttribute("class", "option correct");
+          }
+          
+      }
      }
      // Once user has selected disable all the options
      for (let i = 0; i < allOptions; i++) {
