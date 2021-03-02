@@ -72,6 +72,7 @@ next_btn.onclick = () => {
   let crossIcon = ' <div class="icon cross"><i class="fas fa-times"></i></div>';
 
   function optionSelected(answer) {
+      clearInterval(counter);
       let userAns = answer.textContent;
       let correctAns = questions[que_count].answer;
       let allOptions = option_list.children.length;
