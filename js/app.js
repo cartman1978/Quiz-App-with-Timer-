@@ -64,7 +64,14 @@ next_btn.onclick = () => {
 
   function optionSelected(answer) {
       let userAns = answer.textContent;
-    console.log(userAns);
+      let correctAns = questions[que_count].answer;
+     if (userAns == correctAns) {
+         answer.classList.add("correct");
+          console.log('Your answer is correct');
+     } else {
+         answer.classList.add("incorrect");
+         console.log('Yout piuton');
+     }
   }
 
  function queCounter(index) {
