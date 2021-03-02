@@ -15,7 +15,7 @@ let questions = [
     {
      numb: 2,
      question : "What does CSS stand for?",
-     answer : "Hyper Text Markup Language",
+     answer : "Cascading Style Sheet",
      options: [
          "Common Style Sheet",
          "Colorful Style Sheet",
@@ -26,7 +26,7 @@ let questions = [
     {
      numb: 3,
      question : "What does PHP stand for?",
-     answer : "Hyper Text Markup Language",
+     answer : "Hypertext Programming",
      options: [
          "Hypertext Processor",
          "Hypertext Programming",
