@@ -54,6 +54,17 @@ next_btn.onclick = () => {
                        + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
       que_text.innerHTML = que_tag;
       option_list.innerHTML = option_tag;
+
+      const option = option_list.querySelectorAll(".option");
+      for (let i = 0; i < option.length; i++) {
+          option[i].setAttribute("onclick", "optionSelected(this)");
+          
+      }
+  }
+
+  function optionSelected(answer) {
+      let userAns = answer.textContent;
+    console.log(userAns);
   }
 
  function queCounter(index) {
