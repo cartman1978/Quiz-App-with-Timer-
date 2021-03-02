@@ -34,6 +34,7 @@ let que_numb = 1;
 let counter;
 let timeValue = 15;
 let widthValue = 0;
+let userScore = 0;
 
 const next_btn = quiz_box.querySelector('.next_btn');
 const result_box = document.querySelector(".result_box");
@@ -87,7 +88,10 @@ next_btn.onclick = () => {
       let userAns = answer.textContent;
       let correctAns = questions[que_count].answer;
       let allOptions = option_list.children.length;
+      
      if (userAns == correctAns) {
+         userScore += 1;
+         console.log(userScore);
          answer.classList.add("correct");
          answer.insertAdjacentHTML("beforeend", tickIcon);
           console.log('Your answer is correct');
@@ -117,6 +121,20 @@ next_btn.onclick = () => {
       info_box.classList.remove("activeInfo"); //Hide info box
       quiz_box.classList.remove("activeQuiz"); //Hide Quiz box
       result_box.classList.add("activeResult"); //Show Result box
+      const scoreText = result_box.querySelector(".score_text");
+
+      if (userScore > 3) {
+          let scoreTag = '<span>Congrats, you got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+          scoreText.innerHTML = scoreTag;
+      }
+      else if (userScore > 1) {
+          let scoreTag = '<span>nice, you got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+          scoreText.innerHTML = scoreTag;
+      }
+      else  {
+          let scoreTag = '<span>Sorry, you got only<p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+          scoreText.innerHTML = scoreTag;
+      }
   }
 
   function startTimer(time) {
